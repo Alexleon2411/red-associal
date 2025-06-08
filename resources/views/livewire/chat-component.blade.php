@@ -60,15 +60,15 @@
     </div>
 
     {{-- Input para nuevo mensaje --}}
-    <div class="p-4 border-t bg-white">
-        <form wire:submit="sendMessage" class="flex space-x-2">
+    <div class="p-4 border-t bg-white w-full">
+        <form wire:submit="sendMessage" class="flex md:space-x-2">
             <input type="text"
                    wire:model="newMessage"
                    placeholder="Escribe un mensaje..."
-                   class="flex-1 px-4 py-2 border rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+                   class="md:flex-1 px-2 py-2 border rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 mr-1"
                    maxlength="1000">
             <button type="submit"
-                    class="px-6 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    class="px-2 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
                 Enviar
             </button>
         </form>
