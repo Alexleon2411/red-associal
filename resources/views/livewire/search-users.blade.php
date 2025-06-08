@@ -30,7 +30,7 @@
     @if($showResults && count($users) > 0)
         <div class="absolute z-50 w-full mt-1 bg-white border border-gray-300 rounded-lg shadow-lg max-h-96 overflow-y-auto">
             @foreach($users as $user)
-                <div class="flex items-center justify-between p-4 hover:bg-gray-50 border-b border-gray-100 last:border-b-0">
+                <div class="flex flex-col md:flex-row items-start md:items-center justify-between p-4 hover:bg-gray-50 border-b border-gray-100 last:border-b-0 gap-4">
                     {{-- Info del usuario --}}
                     <div class="flex items-center space-x-3">
                         <img src="{{ $user->imagen ? asset('perfiles/' . $user->imagen) : asset('img/usuario.svg') }}"
