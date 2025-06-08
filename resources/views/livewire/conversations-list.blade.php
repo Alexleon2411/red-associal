@@ -152,49 +152,49 @@
             </button>
         </div>
     </div>
+    <style>
+        /* Scrollbar personalizado para la lista */
+        .overflow-y-auto {
+            scrollbar-width: thin;
+            scrollbar-color: #e5e7eb #f9fafb;
+        }
+
+        .overflow-y-auto::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .overflow-y-auto::-webkit-scrollbar-track {
+            background: #f9fafb;
+        }
+
+        .overflow-y-auto::-webkit-scrollbar-thumb {
+            background-color: #e5e7eb;
+            border-radius: 2px;
+        }
+
+        .overflow-y-auto::-webkit-scrollbar-thumb:hover {
+            background-color: #d1d5db;
+        }
+
+        /* Animación para el indicador de estado */
+        .bg-green-400 {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.7;
+            }
+        }
+
+        /* Efecto de hover más suave */
+        a:hover .bg-gradient-to-br {
+            transform: scale(1.05);
+            transition: transform 0.2s ease-in-out;
+        }
+    </style>
 </div>
 
-<style>
-    /* Scrollbar personalizado para la lista */
-    .overflow-y-auto {
-        scrollbar-width: thin;
-        scrollbar-color: #e5e7eb #f9fafb;
-    }
-
-    .overflow-y-auto::-webkit-scrollbar {
-        width: 4px;
-    }
-
-    .overflow-y-auto::-webkit-scrollbar-track {
-        background: #f9fafb;
-    }
-
-    .overflow-y-auto::-webkit-scrollbar-thumb {
-        background-color: #e5e7eb;
-        border-radius: 2px;
-    }
-
-    .overflow-y-auto::-webkit-scrollbar-thumb:hover {
-        background-color: #d1d5db;
-    }
-
-    /* Animación para el indicador de estado */
-    .bg-green-400 {
-        animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-        0%, 100% {
-            opacity: 1;
-        }
-        50% {
-            opacity: 0.7;
-        }
-    }
-
-    /* Efecto de hover más suave */
-    a:hover .bg-gradient-to-br {
-        transform: scale(1.05);
-        transition: transform 0.2s ease-in-out;
-    }
-</style>
