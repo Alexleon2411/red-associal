@@ -33,7 +33,7 @@
         </div>
 
         {{-- Chat activo --}}
-        <div class="flex-1 flex flex-col w-full md:w-2/3 ">
+        <div class="flex-1 flex flex-col w-full md:w-2/3  ">
             {{-- Header del chat con botón para mostrar conversaciones en móvil --}}
             <div class="flex items-center justify-between p-4 border-b bg-white md:justify-center scroll-auto">
                 <button id="show-conversations" class="md:hidden p-2 rounded-md text-gray-600 hover:text-red-600 hover:bg-gray-50 transition-colors duration-200">
@@ -60,7 +60,7 @@
             </div>
 
             {{-- Componente de chat --}}
-            <div class="flex-1 flex flex-col">
+            <div class="flex-1 flex flex-col min-h-32">
                 @livewire('chat-component', ['conversation' => $conversation])
             </div>
         </div>
