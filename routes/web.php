@@ -53,10 +53,11 @@ Route::delete('/post/{post}/likes', [LikeController::class, 'destroy'])->name('l
 Route::post('/{user:username}/follow', [FollowerController::class, 'store'])->name('users.follow');
 Route::delete('/{user:username}/unfollow', [FollowerController::class, 'destroy'])->name('users.unfollow');
 
+// Route::get('/messages-test/controll', [MessageController::class, 'index'])->name('messages.test');
 
 Route::middleware(['auth'])->group(function () {
     // Rutas de mensajes
-    Route::get('/messages', [MessageController::class, 'index'])->name('messages.index');
+    Route::get('/messages/generall', [MessageController::class, 'index'])->name('messages.index');
     Route::get('/messages/{conversation}', [MessageController::class, 'show'])->name('messages.show');
     Route::post('/messages/{conversation}', [MessageController::class, 'store'])->name('messages.store');
     Route::delete('/messages/{message}', [MessageController::class, 'destroy'])->name('messages.destroy');

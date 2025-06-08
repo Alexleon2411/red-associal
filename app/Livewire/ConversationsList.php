@@ -21,7 +21,6 @@ class ConversationsList extends Component
         $query = Auth::user()->conversations()
             ->with(['lastMessage.user', 'participants'])
             ->orderBy('updated_at', 'desc');
-
         if ($this->search) {
             $query->whereHas('participants', function ($q) {
                 $q->where('users.name', 'like', '%' . $this->search . '%')
@@ -45,6 +44,11 @@ class ConversationsList extends Component
 
     public function render()
     {
-        return view('livewire.conversations-list');
+        $conversations = Auth::user()->conversations()
+            ->with(['lastMessage.user', 'participants'])
+            ->orderBy('updated_at', 'desc')
+            ->get();
+
+        return view('livewire.conversations-list', compact('conversations'));
     }
 }

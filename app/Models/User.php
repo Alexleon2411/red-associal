@@ -80,11 +80,15 @@ class User extends Authenticatable
         return $this->belongsToMany(User::class, 'followers', 'follower_id', 'user_id');
     }
     // Usuarios que este usuario sigue
-        public function siguiendo()
-        {
-            return $this->belongsToMany(User::class, 'followers', 'follower_id', 'user_id');
-        }
+    public function siguiendo()
+    {
+        return $this->belongsToMany(User::class, 'followers', 'follower_id', 'user_id');
+    }
 
+    public function siguiendo2(User $user)
+    {
+        return $this->followers->contains($user->id);
+    }
 
     // esta parte se encarga de los mensajes
 
@@ -95,6 +99,15 @@ class User extends Authenticatable
                     ->withTimestamps();
     }
 
+    public function personalConversations()
+    {
+        return $this->belongsToMany(
+            Conversation::class,
+            'conversation_participants', // tabla pivote
+            'user_id',                  // foreign key del usuario actual
+            'conversation_id'           // foreign key de la conversación
+        );
+    }
 
     public function messages()
     {

@@ -33,9 +33,9 @@
         <div class="flex-1"></div>
 
         {{-- Mensajes --}}
-        <div class="overflow-y-auto p-4 space-y-4" id="messages-container">
+        <div class="overflow-y-auto p-4 space-y-4n max-h-[580px]" id="messages-container">
             @foreach(collect($messages)->reverse() as $message)
-                <div class="flex {{ $message['user_id'] === auth()->id() ? 'justify-end' : 'justify-start' }}">
+                <div class="flex {{ $message['user_id'] === auth()->id() ? 'justify-end' : 'justify-start' }} my-2">
                     <div class="max-w-xs lg:max-w-md px-4 py-2 rounded-lg {{ $message['user_id'] === auth()->id() ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-800' }}">
                         @if($message['user_id'] !== auth()->id())
                             <p class="text-xs font-semibold mb-1">{{ $message['user']['name'] }}</p>
@@ -78,11 +78,11 @@
     </div>
 </div>
 
-<script>
+{{-- <script>
     document.addEventListener('livewire:init', () => {
         Livewire.on('scroll-to-bottom', () => {
             const container = document.getElementById('messages-container');
             container.scrollTop = container.scrollHeight;
         });
     });
-</script>
+</script> --}}

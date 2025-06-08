@@ -43,25 +43,25 @@ use WithPagination;
     }
 
 
-    // public function followUser($userId)
-    // {
-    //     $user = User::find($userId);
-    //     if ($user && !Auth::user()->siguiendo->contains($userId)) {
-    //         Auth::user()->siguiendo()->attach($userId);
-    //         $this->dispatch('user-followed', userId: $userId);
-    //         session()->flash('mensaje', 'Ahora sigues a ' . $user->name);
-    //     }
-    // }
+    public function followUser($userId)
+    {
+        $user = User::find($userId);
+        if ($user && !Auth::user()->siguiendo->contains($userId)) {
+            Auth::user()->siguiendo()->attach($userId);
+            $this->dispatch('user-followed', userId: $userId);
+            session()->flash('mensaje', 'Ahora sigues a ' . $user->name);
+        }
+    }
 
-    // public function unfollowUser($userId)
-    // {
-    //     $user = User::find($userId);
-    //     if ($user && Auth::user()->siguiendo->contains($userId)) {
-    //         Auth::user()->siguiendo()->detach($userId);
-    //         $this->dispatch('user-unfollowed', userId: $userId);
-    //         session()->flash('mensaje', 'Has dejado de seguir a ' . $user->name);
-    //     }
-    // }
+    public function unfollowUser($userId)
+    {
+        $user = User::find($userId);
+        if ($user && Auth::user()->siguiendo->contains($userId)) {
+            Auth::user()->siguiendo()->detach($userId);
+            $this->dispatch('user-unfollowed', userId: $userId);
+            session()->flash('mensaje', 'Has dejado de seguir a ' . $user->name);
+        }
+    }
 
     public function clearSearch()
     {

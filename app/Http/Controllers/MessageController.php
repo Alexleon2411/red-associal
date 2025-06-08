@@ -19,7 +19,7 @@ class MessageController extends Controller
     // Mostrar lista de conversaciones
     public function index()
     {
-        dd(Auth::user());
+        // dd('el metodo se ha llamado');
         $conversations = Auth::user()->conversations()
             ->with(['lastMessage.user', 'participants'])
             ->orderBy('updated_at', 'desc')
