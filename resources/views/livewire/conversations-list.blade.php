@@ -4,7 +4,7 @@
     <div class="flex-shrink-0 p-4 border-b bg-white">
         <div class="relative">
             <input type="text"
-                   wire:model.live="search"
+                   wire:model.live.debounce.300ms="search"
                    placeholder="Buscar conversaciones..."
                    class="w-full pl-10 pr-4 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-colors duration-200">
             <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -143,13 +143,13 @@
             </span>
 
             {{-- Botón de actualizar --}}
-            <button wire:click="$refresh"
+            {{-- <button wire:click="$refresh"
                     class="p-1.5 text-gray-400 hover:text-red-600 rounded-md hover:bg-white transition-colors duration-200"
                     title="Actualizar conversaciones">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
                 </svg>
-            </button>
+            </button> --}}
         </div>
     </div>
     <style>

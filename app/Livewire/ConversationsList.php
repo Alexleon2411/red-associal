@@ -16,15 +16,31 @@ class ConversationsList extends Component
         $this->loadConversations();
     }
 
+    // public function loadConversations()
+    // {
+    //     $query = Auth::user()->conversations()
+    //         ->with(['lastMessage.user', 'participants'])
+    //         ->orderBy('updated_at', 'desc');
+    //     if ($this->search) {
+    //         $query->whereHas('participants', function ($q) {
+    //             $q->where('users.name', 'like', '%' . $this->search . '%')
+    //               ->where('users.id', '!=', Auth::id());
+    //         });
+    //     }
+
+    //     $this->conversations = $query->get();
+    // }
     public function loadConversations()
     {
-        $query = Auth::user()->conversations()
+        $user = Auth::user();
+        $query = $user->conversations()
             ->with(['lastMessage.user', 'participants'])
             ->orderBy('updated_at', 'desc');
+
         if ($this->search) {
-            $query->whereHas('participants', function ($q) {
+            $query->whereHas('participants', function ($q) use ($user) {
                 $q->where('users.name', 'like', '%' . $this->search . '%')
-                  ->where('users.id', '!=', Auth::id());
+                ->where('users.id', '!=', $user->id);
             });
         }
 
@@ -44,11 +60,11 @@ class ConversationsList extends Component
 
     public function render()
     {
-        $conversations = Auth::user()->conversations()
-            ->with(['lastMessage.user', 'participants'])
-            ->orderBy('updated_at', 'desc')
-            ->get();
+        // $conversations = Auth::user()->conversations()
+        //     ->with(['lastMessage.user', 'participants'])
+        //     ->orderBy('updated_at', 'desc')
+        //     ->get();
 
-        return view('livewire.conversations-list', compact('conversations'));
+        return view('livewire.conversations-list');
     }
 }
