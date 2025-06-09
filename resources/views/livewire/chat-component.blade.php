@@ -76,13 +76,13 @@
             <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
         @enderror
     </div>
+    {{-- <script>
+        document.addEventListener('livewire:init', () => {
+            Livewire.on('scroll-to-bottom', () => {
+                const container = document.getElementById('messages-container');
+                container.scrollTop = container.scrollHeight;
+            });
+        });
+    </script> --}}
 </div>
 
-{{-- <script>
-    document.addEventListener('livewire:init', () => {
-        Livewire.on('scroll-to-bottom', () => {
-            const container = document.getElementById('messages-container');
-            container.scrollTop = container.scrollHeight;
-        });
-    });
-</script> --}}

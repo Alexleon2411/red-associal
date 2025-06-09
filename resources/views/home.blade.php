@@ -19,7 +19,10 @@
                                     alt="Perfil de {{ $post->user->username }}"
                                     class="w-10 h-10 rounded-full object-cover mr-3"
                                 >
-                                <span class="font-semibold text-gray-800">{{ $post->user->username }}</span>
+                                <a href="{{route('post.index', $post->user)}}">
+
+                                    <span class="font-semibold text-gray-800">{{ $post->user->username }}</span>
+                                </a>
                             </div>
 
                             <!-- Imagen del post con altura máxima -->

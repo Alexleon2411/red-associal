@@ -88,7 +88,7 @@
                 </div>
             </section> --}}
             <!-- Estadísticas -->
-            <section class="flex justify-between text-center mt-4 text-sm w-md">
+            <section class="flex justify-between text-center mt-4 text-sm min-w-[250px]">
                 <div>
                 <span class="font-bold block">{{$posts->count()}} </span>
                 <span class="text-gray-600">publicaciones</span>

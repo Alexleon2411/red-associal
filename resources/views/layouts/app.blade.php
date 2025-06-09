@@ -104,15 +104,21 @@
                                 Iniciar Sesión
                             </a>
                             <a href="{{route('register')}}"
-                            class="inline-flex px-4 py-2 bg-red-600 hover:bg-red-700 text-white font-medium rounded-lg transition-all duration-200 transform hover:scale-105 shadow-md hover:shadow-lg text-sm sm:text-base">
+                            class="hidden sm:inline-flex px-4 py-2 bg-red-600 hover:bg-red-700 text-white font-medium rounded-lg transition-all duration-200 transform hover:scale-105 shadow-md hover:shadow-lg text-sm sm:text-base">
                                 Crear Cuenta
                             </a>
 
                             <!-- Mobile Login Link -->
                             <a href="{{route('login')}}"
-                            class="sm:hidden p-2 text-gray-700 hover:text-red-600 transition-colors duration-200">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path>
+                                class="sm:hidden p-2 text-gray-700 hover:text-red-600 transition-colors duration-200">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path>
+                                    </svg>
+                            </a>
+                            <a href="{{route('register')}}"
+                                class="sm:hidden p-2 text-gray-700 hover:text-red-600 transition-colors duration-200">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v6m3-3h-6m-2 4a4 4 0 01-8 0m4-4a4 4 0 110-8 4 4 0 010 8z" />
                                 </svg>
                             </a>
                         </nav>
