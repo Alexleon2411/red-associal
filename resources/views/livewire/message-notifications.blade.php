@@ -1,4 +1,4 @@
-<div class="relative">
+<div class="relative" wire:poll.5s="updateUnreadCount">
     <a href="{{ route('messages.index') }}" class="flex items-center text-gray-600 hover:text-gray-900">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

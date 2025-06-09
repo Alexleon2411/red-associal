@@ -34,11 +34,11 @@
 
                             {{-- para los mensajes --}}
                             <div class="flex items-center space-x-4">
-                                <a href="{{route('messages.index')}}"
+                                {{-- <a href="{{route('messages.index')}}"
                                 class="text-gray-700 hover:text-red-600 font-medium transition-colors duration-200">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 14 14"><g fill="none"><path fill="#8fbffa" fill-rule="evenodd" d="M12.722.037a1.6 1.6 0 0 0-.9.06L1.107 3.673l-.003.001a1.62 1.62 0 0 0-1.07 1.238A1.6 1.6 0 0 0 .472 6.36L3.06 8.944l-.085 3.253a.5.5 0 0 0 .73.457l2.014-1.042l1.917 1.909a1.6 1.6 0 0 0 1.52.434a1.62 1.62 0 0 0 1.168-1.068v-.001l3.575-10.712A1.62 1.62 0 0 0 12.722.037" clip-rule="evenodd"/><path fill="#2859c5" d="m3.059 8.944l-.085 3.253a.5.5 0 0 0 .73.457l2.014-1.042z"/><path fill="#2859c5" fill-rule="evenodd" d="m3.057 9.013l7.045-5.117a.625.625 0 0 0-.735-1.012L2.203 8.088l.856.856z" clip-rule="evenodd"/></g></svg>
-                                </a>
-
+                                </a> --}}
+                                @livewire('message-notifications')
                             </div>
                             <!-- User Info -->
                             <div class="flex items-center space-x-4">
@@ -76,10 +76,14 @@
                                     </svg>
                                     Crear Post
                                 </a>
-                                <a href="{{route('messages.index')}}"
+                                {{-- <a href="{{route('messages.index')}}"
                                 class="flex items-center gap-3 w-[150px] px-4 py-3 hover:bg-gray-50  text-back hover:text-red-700 font-medium rounded-lg transition-colors duration-200">
                                     Mensajes
                                 </a>
+                                 --}}
+                                 <div class="flex items-center gap-3 w-[150px] px-4 py-3">
+                                    @livewire('message-notifications')
+                                </div>
                                 <a href="{{route('post.index', auth()->user()->username)}}"
                                 class="block px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors duration-200">
                                     Mi Perfil (<span class="font-semibold">{{auth()->user()->username}}</span>)

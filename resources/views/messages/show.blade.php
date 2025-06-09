@@ -28,7 +28,7 @@
             </div>
 
             <div class="overflow-y-auto flex-1">
-                @livewire('conversations-list')
+                @livewire('conversations-list', key('conversations-list'))
             </div>
         </div>
 
@@ -61,7 +61,7 @@
 
             {{-- Componente de chat --}}
             <div class="flex-1 flex flex-col min-h-32">
-                @livewire('chat-component', ['conversation' => $conversation])
+                @livewire('chat-component', ['conversation' => $conversation], key('chat-'.$conversation->id))
             </div>
         </div>
     </div>

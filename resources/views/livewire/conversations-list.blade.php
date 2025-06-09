@@ -99,7 +99,7 @@
 
                             {{-- Contador de mensajes no leídos --}}
                             @if($unreadCount > 0)
-                                <div class="flex-shrink-0 ml-2">
+                                <div class="flex-shrink-0 ml-2" wire:poll.5s="refreshConversations">
                                     <span class="inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white bg-red-500 rounded-full min-w-[20px] h-5">
                                         {{ $unreadCount > 99 ? '99+' : $unreadCount }}
                                     </span>

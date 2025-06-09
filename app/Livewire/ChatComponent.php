@@ -71,6 +71,9 @@ class ChatComponent extends Component
 
         // Scroll to bottom
         $this->dispatch('scroll-to-bottom');
+        // También emitir para actualizar contadores
+        $this->dispatch('messageReceived');
+        $this->dispatch('conversationUpdated');
     }
 
     public function deleteMessage($messageId)
