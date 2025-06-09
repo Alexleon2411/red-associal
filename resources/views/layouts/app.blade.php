@@ -2,6 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
+        <link rel="manifest" href="/manifest.json">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         @stack('styles')
         <title>Red-Associal</title>
@@ -143,6 +144,9 @@
     </body>
     <script>
         // Toggle mobile menu
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js');
+        }
         document.addEventListener('DOMContentLoaded', function() {
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
